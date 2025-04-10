@@ -10,7 +10,7 @@ This project aims to predict different types of crimes using Machine Learning te
 January 2024 – April 2024
 
 ## 🧠 Technologies Used
-- Python
+- Python 
 - Django
 - MySQL (XAMPP)
 - HTML, CSS, JavaScript
