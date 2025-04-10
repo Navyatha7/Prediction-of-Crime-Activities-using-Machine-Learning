@@ -1,0 +1,100 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Righteous|Fredoka+One" rel="stylesheet">
+    
+    <style>
+        body {
+            background: url("{% static '2766363.jpg' %}") no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Righteous', cursive;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .login-box {
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+            padding: 40px;
+            border-radius: 15px; /* Curved edges */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+            backdrop-filter: blur(10px); /* Blur background */
+            text-align: center;
+        }
+        .login-box h2 {
+            font-family: 'Fredoka One', cursive;
+            color: white;
+        }
+        .form-control {
+            border-radius: 10px; /* Curved edges */
+            padding: 10px;
+            border: none;
+        }
+        .btn-custom {
+            background: #ff4b5c;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background: #e63e50;
+            transform: scale(1.05);
+        }
+        .btn-secondary-custom {
+            background: #007bff;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-secondary-custom:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="login-box">
+                <h2>Crime Type and Occurrence Prediction</h2>
+                <p class="text-light">Crime, Analyze, Patterns, Kaggle, Estimate, Naïve Bayes, Accuracy</p>
+                <hr style="background-color: white;">
+
+                <form method="POST">
+                    {% csrf_token %}
+                    
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control" placeholder="User Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+
+                    <button type="submit" name="submit1" class="btn btn-custom btn-block">Sign In</button>
+                </form>
+
+                <br>
+                <p class="text-light">Or Login Using:</p>
+
+                <a href="{% url 'serviceproviderlogin' %}" class="btn btn-secondary-custom btn-block">Service Provider</a>
+                <a href="{% url 'Register1' %}" class="btn btn-secondary-custom btn-block">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

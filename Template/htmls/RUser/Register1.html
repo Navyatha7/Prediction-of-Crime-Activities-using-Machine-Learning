@@ -1,0 +1,112 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register Your Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Righteous|Fredoka+One" rel="stylesheet">
+    
+    <style>
+        body {
+            background: url("{% static '2766363.jpg' %}") no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Righteous', cursive;
+        }
+        .container-fluid {
+            padding: 50px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 15px; /* Curved edges */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+            backdrop-filter: blur(10px); /* Blur effect */
+            text-align: center;
+            max-width: 500px; /* Adjusted width */
+        }
+        #title {
+            font-family: 'Fredoka One', cursive;
+            color: white;
+            font-size: 24px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 12px;
+        }
+        .btn-custom {
+            background: #ff4b5c;
+            color: white;
+            border-radius: 8px;
+            padding: 8px 15px;
+            border: none;
+            font-size: 16px;
+            transition: 0.3s;
+            width: 100%;
+        }
+        .btn-custom:hover {
+            background: #e63e50;
+            transform: scale(1.05);
+        }
+        .btn-link {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+        .btn-link:hover {
+            color: #ffcccb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="container">
+            <h2 id="title">Crime Type and Occurrence Prediction</h2>
+            <p class="text-light">Crime, Analyze, Patterns, Kaggle, Estimate, Naïve Bayes, Accuracy</p>
+            <hr style="background-color: white;">
+            
+            <form role="form" method="POST">
+                {% csrf_token %}
+       
+                <h4 class="text-light">Register Your Details Here</h4>
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="User Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="phoneno" placeholder="Mobile Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="country" placeholder="Country" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="state" placeholder="State" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="city" placeholder="City" required>
+                </div>
+                
+                <button type="submit" class="btn btn-custom">Sign Up</button>
+            </form>
+            <br>
+            <a href="{% url 'login' %}" class="btn btn-custom">User Login</a>
+        </div>
+    </div>
+</body>
+</html>
